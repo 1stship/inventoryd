@@ -1,5 +1,9 @@
 # inventoryd
-ソラコム社のデバイス管理サービスSORACOM Inventoryにアクセスするためのツールです。出来るだけ簡単に使用できるようにするため、リソースは全てファイルとして扱います。以下の機能に対応しています。
+ソラコム社のデバイス管理サービスSORACOM Inventoryにアクセスするためのツールです。SORACOM Inventoryの説明はこちら
+
+https://soracom.jp/services/inventory/
+
+出来るだけ簡単に使用できるようにするため、リソースは全てファイルとして扱います。以下の機能に対応しています。
 
 - SIM経由のブートストラップ
 - デバイスIDとデバイスシークレットを利用した接続
@@ -79,11 +83,3 @@ date +%s
 OMAに規定されていないモデルについては、以下のURLを参考に、SORACOM コンソールにてカスタムオブジェクトをご登録ください。
 
 https://dev.soracom.io/jp/start/inventory_custom_object/
-
-## 拡張方法について
-
-lwm2m.goにて定義されているLWm2mHandlerインタフェースを実装した構造体を作成することで、直接プログラム内でリソースの値を定義する他、たとえばHTTPサーバへのアクセスからリソースを更新/参照するなどができます。
-
-ファイルベースのハンドラHandlerFile(inventoryd_handler_file.goにて定義)をご参照ください。
-
-生成したハンドラは、Inventoryd構造体のInitialize、Bootstrap、SetSecurityParamsメソッドに渡す必要があります。
