@@ -4,10 +4,11 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"funahara/inventoryd"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/1stship/inventoryd"
 )
 
 func main() {
